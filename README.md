@@ -128,10 +128,15 @@ The packaged file will be created in `dist/sioux-bypasser-v<version>.xpi`.
 
 ## Disclaimer
 
+<details>
+<summary><strong>Authorized Testing Use Only</strong></summary>
+
 This software is provided only for lawful testing, authorized security research, internal QA, and interoperability evaluation on systems, accounts, applications, or environments that you own or are explicitly permitted to assess.
 
-It must not be used for unauthorized access, circumvention of security controls, fraud, violation of platform terms, unauthorized data collection, or any activity that is unlawful or harmful to third parties.
+It must not be used for unauthorized access, circumvention of security controls, fraud, violation of platform terms, unauthorized data collection, or any unlawful or harmful activity.
 
-All actions taken with this software and any resulting consequences are solely the user's responsibility. This product is provided on an "as is" basis without warranties of any kind. The developer is not liable for any damage, loss, service disruption, or legal consequences arising from misuse or unauthorized use.
+All actions taken with this software and any resulting consequences are solely the user's responsibility. This product is provided on an "as is" basis without warranties of any kind, and the developer is not liable for misuse, loss, service disruption, or legal consequences arising from unauthorized use.
 
 If you do not agree to these terms, do not use this software. This disclaimer does not legalize unauthorized activity and does not constitute legal advice.
+
+</details>
