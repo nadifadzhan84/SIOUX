@@ -1,75 +1,105 @@
-<div align="center">
-  
-  # 🦅 SIOUX BYPASSER
-  **Payment Siege Extension for Elite Gateway Exploitation**
+# 🦅 SIOUX BYPASSER v1.9.4
 
-  [![Version](https://img.shields.io/badge/Version-1.9.4-blue.svg?style=for-the-badge)](#)
-  [![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg?style=for-the-badge)](#)
-  [![Architecture](https://img.shields.io/badge/Architecture-Distributed_Cloud-orange.svg?style=for-the-badge)](#)
-  [![Target](https://img.shields.io/badge/Target-Universal_Gateways-red.svg?style=for-the-badge)](#)
+**Payment Siege Extension for Elite Gateway Exploitation**
 
-</div>
-
-<br>
-
-> ⚠️ **LEGAL DISCLAIMER:** This software is provided exclusively for security research, system testing, and educational purposes. The developer strictly does not endorse, promote, or condone any form of illegal activity, system abuse, or violation of any platform's terms of service. All actions taken and consequences arising from the use of this software are the sole responsibility of the user.
+SIOUX BYPASSER is an enterprise-grade, highly advanced browser extension designed to intercept, manipulate, and evaluate payment gateway workflows in real-time. Built on Manifest V3, it utilizes a sophisticated distributed architecture, combining aggressive DOM manipulation on the client side with a remote Cloudflare Worker backend for license management and 3DS relay routing.
 
 ---
 
-## ⚡ System Architecture
+## ⚡ Core Capabilities
 
-SIOUX BYPASSER is an enterprise-grade, highly advanced browser extension designed to intercept, manipulate, and evaluate payment gateway workflows in real-time. Unlike traditional standalone extensions, SIOUX operates on a **Distributed Cloud Architecture**:
+### 🛡️ Universal Gateway Targeting
+Engineered with specific sensors and manipulation logic for a massive array of global payment processors and storefronts, including:
+* **Tier 1 Gateways:** Stripe, Airwallex, Adyen, Braintree, Checkout.com, Square.
+* **Alternative Billing:** Paddle, Xsolla, NordPay, HiPay, Smart Glocal, EdfaPay.
+* **Platform Stores:** Steam, GOG, OpenAI.
 
-* **Client-Side (MV3):** Executes aggressive DOM manipulation, CSP network stripping, and state machine automation directly within the victim's browser context.
-* **Server-Side (Cloudflare Workers):** Manages real-time license validation (Premium/Trial), secure asset distribution, and payload routing via KV databases (`LICENSES_KV`, `SIOUX_ASSETS`).
-* **3DS Relay Engine:** Employs an injected relay script (`inject-relay.js`) to extract and bypass 3D Secure endpoints seamlessly.
-
----
-
-## 🛡️ Target Infrastructure
-
-Engineered with specific DOM sensors and manipulation logic for a massive array of global payment processors and storefronts.
-
-| Tier 1 Processors | Alternative Billing | Platform Stores |
-| :--- | :--- | :--- |
-| **Stripe** | Paddle | Steam |
-| **Airwallex** | Xsolla | GOG |
-| **Adyen** | NordPay | OpenAI |
-| **Braintree** | HiPay | |
-| **Checkout.com** | Smart Glocal | |
-| **Square** | EdfaPay | |
-
----
-
-## 🕸️ Tactical Capabilities
-
-### 1. Advanced Network Manipulation
-* **Brute-Force CSP Stripping:** Utilizes MV3 `declarativeNetRequest` rules to strip `Content-Security-Policy` headers directly at the network layer, preventing target platforms from blocking injected payloads.
-* **Risk Evaluation Engine:** Built-in heuristics (`RiskEvaluations`) to calculate risk scores, determine risk bands, and output recommended actions before payload execution.
-
-### 2. DOM Siege & Automation
+### 🕸️ Advanced Network Manipulation
+* **CSP Stripping:** Utilizes brute-force `declarativeNetRequest` rules to strip `Content-Security-Policy` headers directly at the network layer, preventing target platforms from blocking injected payloads.
+* **Risk Evaluation Engine:** Built-in heuristics (`RiskEvaluations`) to calculate risk scores, determine risk levels, and output recommended actions before payload execution.
 * **SafeKey Hunter:** A relentless `MutationObserver` that scans and destroys 3D Secure/SafeKey DOM elements every 300 milliseconds to prevent checkout interruptions.
 * **Stripe AutoClick FSM:** A Finite State Machine designed to automate checkout flows and intercept Amex sessions via simulated "Escape" keydown events.
-* **Anti-Debugging:** Hijacks console methods to blind platform telemetry and error tracking.
 
-### 3. Analytics & BIN Management
-* **Live Operations Dashboard:** Real-time tracking of operations categorized into **Paid**, **LIVE**, **DEAD**, and **Decline** outcomes.
-* **BIN Library Manager:** Built-in database for managing and deploying custom BIN lists, featuring pre-loaded read-only libraries (e.g., Ayden, VPN BINS, Stripe Auto Renewal).
+### ☁️ Cloud-Backed Architecture
+Unlike traditional standalone extensions, SIOUX operates with a distributed backend:
+* **Worker Backend:** Integrates with Cloudflare Workers (`worker.js`) via KV databases (`LICENSES_KV`, `SIOUX_ASSETS`) for real-time license validation (Premium/Trial).
+* **3DS Relay:** Employs an injected relay script (`inject-relay.js`) to extract and route 3DS endpoints seamlessly.
+
+### 📊 Tactical Dashboard & BIN Management
+* **Live Analytics:** Real-time tracking of operations categorized into Paid, LIVE, DEAD, and Decline outcomes.
+* **BIN Library Manager:** Built-in database for managing and deploying custom BIN lists, including pre-loaded read-only libraries (Ayden, VPN BINS, Cursor, Stripe Auto Renewal).
 
 ---
 
-## 🏗️ Installation & Deployment
+## 🏗️ Architecture & Deployment
 
 SIOUX BYPASSER is designed for seamless distribution and rigorous testing environments. 
 
-### Prerequisites
-* Node.js (v18 or higher)
-* Chromium-based browser or Firefox Developer Edition
+### Infrastructure Stack
+* **Client:** JavaScript (MV3), HTML, CSS.
+* **Backend:** Cloudflare Workers + KV Storage.
+* **Asset Distribution:** Optimized for a hybrid Worker + Google Drive architecture to serve extension updates dynamically.
 
-### Development / Unpacked Testing
+### Installation (Development & Testing)
 
-**For Firefox (Primary Testing Environment):**
-The repository includes dedicated automation scripts to install the extension directly into your Firefox profile.
+**Firefox minimum version:** `142.0`
+
+#### Option A: Load Temporarily in Firefox
+
+This is the fastest way to test the extension locally in Firefox.
+
+1. Open Firefox and visit `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on**.
+3. Select `manifest.json` from the repository root.
+4. Firefox will load the extension immediately.
+5. Click the SIOUX toolbar icon to open the main dashboard (`options.html`).
+6. After editing source files, return to `about:debugging` and click **Reload** on the add-on entry.
+
+#### Option B: Install Into a Firefox Profile
+
+Use this flow when you want a repeatable Firefox testing profile.
+
+1. Ensure Node.js is installed.
+2. Install project dependencies:
+   ```bash
+   npm install
+   ```
+3. List available Firefox profiles:
+   ```bash
+   npm run firefox:profiles:list
+   ```
+4. Install the extension into a selected profile:
+   ```bash
+   npm run firefox:install:profile -- --profile-name "YourProfileName"
+   ```
+5. If needed, you can target a profile directory directly:
+   ```bash
+   node scripts/install-firefox-profile-addon.mjs --profile-dir "C:\path\to\Firefox\Profiles\your-profile"
+   ```
+6. Launch Firefox with that profile, then click the SIOUX toolbar icon to open the dashboard.
+
+> **Note:** Firefox release builds still require a signed add-on for persistent installs. For unsigned local testing, use Firefox Developer Edition, ESR, or Nightly, or use the temporary add-on flow above.
+
+### Using SIOUX in Firefox
+
+After the add-on is loaded in Firefox:
+
+1. Click the SIOUX extension icon in the Firefox toolbar.
+2. The icon opens the main configuration page (`options.html`).
+3. Open the **License Key** section, enter your key, then click **Verify & Activate**.
+4. Add BINs in the **Configuration** section.
+5. If needed, configure a proxy in **Advanced** using **Primary Proxy** or the proxy rotation list.
+6. Open a supported checkout page and refresh the tab after changing settings so the latest configuration is applied.
+7. Monitor the **Logs** panel for runtime activity, gateway responses, and risk output.
+
+If license activation fails while a proxy is active, disable the proxy first, activate the license, then apply the proxy again.
+
+### Packaging for Firefox
+
+To build a Firefox package:
+
 ```bash
-# Install to a specific Firefox profile
-node install-firefox-profile-addon.mjs --profile-name "YourProfileName"
+npm run build:xpi
+```
+
+The packaged file will be created in `dist/sioux-bypasser-v<version>.xpi`.
