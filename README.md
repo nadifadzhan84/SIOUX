@@ -144,6 +144,8 @@ The packaged file will be created in `dist/sioux-bypasser-v<version>.xpi`.
 <summary><strong>Authorized Testing Use Only</strong></summary>
 
 Don’t forget to download the LICENSE KEY on the right to use the full version.
+</details>
+
 ---
 
 ## Disclaimer
