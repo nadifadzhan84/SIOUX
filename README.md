@@ -33,9 +33,9 @@ Engineered with specific sensors and manipulation logic for a massive array of g
 * **Stripe AutoClick FSM:** A Finite State Machine designed to automate checkout flows and intercept Amex sessions via simulated "Escape" keydown events.
 
 ### ☁️ Cloud-Backed Architecture
-Unlike traditional standalone extensions, SIOUX operates with a distributed backend:
-* **Worker Backend:** Integrates with Cloudflare Workers (`worker.js`) via KV databases (`LICENSES_KV`, `SIOUX_ASSETS`) for real-time license validation (Premium/Trial).
-* **3DS Relay:** Employs an injected relay script (`inject-relay.js`) to extract and route 3DS endpoints seamlessly.
+Unlike traditional standalone extensions, SIOUX uses a distributed service layer to support licensing, configuration delivery, and runtime coordination for authorized testing deployments.
+* **Backend Services:** Integrates with Cloudflare Workers (`worker.js`) and KV storage for license validation, asset delivery, and server-backed extension state.
+* **Relay Layer:** Uses companion runtime scripts such as `inject-relay.js` to support controlled routing and service coordination for supported workflows.
 
 ### 📊 Tactical Dashboard & BIN Management
 * **Live Analytics:** Real-time tracking of operations categorized into Paid, LIVE, DEAD, and Decline outcomes.
