@@ -44,9 +44,29 @@ SIOUX BYPASSER is designed for seamless distribution and rigorous testing enviro
 
 **Firefox minimum version:** `142.0`
 
-#### Option A: Load Temporarily in Firefox
+#### Option A: Install from the Bundled XPI
 
-This is the fastest way to test the extension locally in Firefox.
+If you just want to install the packaged Firefox build that is already included in this repo, use:
+
+`dist/sioux-bypasser-v1.9.4.xpi`
+
+Installation steps:
+
+1. Open Firefox.
+2. Open `about:addons`.
+3. Click the gear icon, then choose **Install Add-on From File...**
+4. Select:
+   ```text
+   dist/sioux-bypasser-v1.9.4.xpi
+   ```
+5. Confirm the installation prompt if Firefox allows the add-on.
+6. After installation, click the SIOUX toolbar icon to open the main dashboard (`options.html`).
+
+> **Important:** The bundled `sioux-bypasser-v1.9.4.xpi` in this repo is a packaged build, but it is not signed by Mozilla. Firefox install-from-file is intended for signed add-ons, and standard Firefox Release can reject unsigned packages. If Firefox rejects the file, use **Option B** below or test with Firefox Developer Edition, ESR, or Nightly.
+
+#### Option B: Load Temporarily in Firefox
+
+This is the safest local testing method when Firefox refuses the unsigned `.xpi`.
 
 1. Open Firefox and visit `about:debugging#/runtime/this-firefox`.
 2. Click **Load Temporary Add-on**.
@@ -55,7 +75,7 @@ This is the fastest way to test the extension locally in Firefox.
 5. Click the SIOUX toolbar icon to open the main dashboard (`options.html`).
 6. After editing source files, return to `about:debugging` and click **Reload** on the add-on entry.
 
-#### Option B: Install Into a Firefox Profile
+#### Option C: Install Into a Firefox Profile
 
 Use this flow when you want a repeatable Firefox testing profile.
 
@@ -78,8 +98,6 @@ Use this flow when you want a repeatable Firefox testing profile.
    ```
 6. Launch Firefox with that profile, then click the SIOUX toolbar icon to open the dashboard.
 
-> **Note:** Firefox release builds still require a signed add-on for persistent installs. For unsigned local testing, use Firefox Developer Edition, ESR, or Nightly, or use the temporary add-on flow above.
-
 ### Using SIOUX in Firefox
 
 After the add-on is loaded in Firefox:
@@ -96,7 +114,9 @@ If license activation fails while a proxy is active, disable the proxy first, ac
 
 ### Packaging for Firefox
 
-To build a Firefox package:
+If you already use the bundled `dist/sioux-bypasser-v1.9.4.xpi`, you do not need to rebuild anything.
+
+To generate a new Firefox package:
 
 ```bash
 npm run build:xpi
