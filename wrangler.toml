@@ -1,0 +1,11 @@
+name = "relay-3ds"
+main = "worker.js"
+compatibility_date = "2026-03-21"
+
+[[kv_namespaces]]
+binding = "LICENSES_KV"
+id = "d6b13592147643eeacf94063d3431aa3"
+
+[[kv_namespaces]]
+binding = "SIOUX_ASSETS"
+id = "b426d911b8aa463d95227a0b638e850b"

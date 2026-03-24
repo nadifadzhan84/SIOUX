@@ -1,0 +1,253 @@
+{
+  "manifest_version": 3,
+  "name": "SIOUX BYPASSER",
+  "description": "Payment Siege Extension for elite gateway exploitation",
+  "version": "1.9.4",
+  "incognito": "split",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "permissions": [
+    "scripting",
+    "notifications",
+    "alarms",
+    "storage",
+    "proxy",
+    "webRequest",
+    "webRequestAuthProvider",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "tabs",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://*.adyen.com/*",
+    "https://*.airwallex.com/*",
+    "https://*.airwallexpayments.com/*",
+    "https://*.braintreegateway.com/*",
+    "https://*.checkout.com/*",
+    "https://billing.openai.com/*",
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://*.edfapay.com/*",
+    "https://*.gog.com/*",
+    "https://*.google.com/*",
+    "https://google.com/*",
+    "https://*.recaptcha.net/*",
+    "https://recaptcha.net/*",
+    "https://*.hcaptcha.com/*",
+    "https://hcaptcha.com/*",
+    "https://*.hipay.com/*",
+    "https://*.hipay-tpp.com/*",
+    "https://*.nordcheckout.com/*",
+    "https://*.nordpayments.com/*",
+    "https://*.paddle.com/*",
+    "https://*.paddle.net/*",
+    "https://pay.openai.com/*",
+    "https://challenges.cloudflare.com/*",
+    "https://*.smart-glocal.com/*",
+    "https://*.square.site/*",
+    "https://*.squarecdn.com/*",
+    "https://*.squareup.com/*",
+    "https://*.steampowered.com/*",
+    "https://*.stripe.com/*",
+    "https://*.stripe.network/*",
+    "https://*.xsolla.com/*",
+    "https://*.xsolla.net/*",
+    "https://2captcha.com/*",
+    "https://api.anti-captcha.com/*",
+    "https://api.capsolver.com/*",
+    "https://api.country.is/*",
+    "https://api.ipapi.is/*",
+    "https://api.ipify.org/*",
+    "https://api.nocaptchaai.com/*",
+    "https://api.nopecha.com/*",
+    "https://api.telegram.org/*",
+    "https://api64.ipify.org/*",
+    "https://ifconfig.me/*",
+    "https://ip-api.com/*",
+    "https://ipapi.co/*",
+    "https://ipinfo.io/*",
+    "https://ipwho.is/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://relay-3ds.sioux.workers.dev/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/fonts/siuoxbypasser.TTF",
+        "inject-relay.js",
+        "assets/icons/icon16.png",
+        "assets/icons/icon48.png",
+        "assets/icons/icon128.png"
+      ],
+      "matches": [
+        "https://*.adyen.com/*",
+        "https://*.airwallex.com/*",
+        "https://*.airwallexpayments.com/*",
+        "https://*.braintreegateway.com/*",
+        "https://*.checkout.com/*",
+        "https://billing.openai.com/*",
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://*.edfapay.com/*",
+        "https://*.gog.com/*",
+        "https://*.google.com/*",
+        "https://google.com/*",
+        "https://*.recaptcha.net/*",
+        "https://recaptcha.net/*",
+        "https://*.hcaptcha.com/*",
+        "https://hcaptcha.com/*",
+        "https://*.hipay.com/*",
+        "https://*.hipay-tpp.com/*",
+        "https://*.nordcheckout.com/*",
+        "https://*.nordpayments.com/*",
+        "https://*.paddle.com/*",
+        "https://*.paddle.net/*",
+        "https://pay.openai.com/*",
+        "https://challenges.cloudflare.com/*",
+        "https://*.smart-glocal.com/*",
+        "https://*.square.site/*",
+        "https://*.squarecdn.com/*",
+        "https://*.squareup.com/*",
+        "https://*.steampowered.com/*",
+        "https://*.stripe.com/*",
+        "https://*.stripe.network/*",
+        "https://*.xsolla.com/*",
+        "https://*.xsolla.net/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.adyen.com/*",
+        "https://*.airwallex.com/*",
+        "https://*.airwallexpayments.com/*",
+        "https://*.braintreegateway.com/*",
+        "https://*.checkout.com/*",
+        "https://billing.openai.com/*",
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://*.edfapay.com/*",
+        "https://*.gog.com/*",
+        "https://*.google.com/*",
+        "https://google.com/*",
+        "https://*.recaptcha.net/*",
+        "https://recaptcha.net/*",
+        "https://*.hcaptcha.com/*",
+        "https://hcaptcha.com/*",
+        "https://*.hipay.com/*",
+        "https://*.hipay-tpp.com/*",
+        "https://*.nordcheckout.com/*",
+        "https://*.nordpayments.com/*",
+        "https://*.paddle.com/*",
+        "https://*.paddle.net/*",
+        "https://pay.openai.com/*",
+        "https://challenges.cloudflare.com/*",
+        "https://*.smart-glocal.com/*",
+        "https://*.square.site/*",
+        "https://*.squarecdn.com/*",
+        "https://*.squareup.com/*",
+        "https://*.steampowered.com/*",
+        "https://*.stripe.com/*",
+        "https://*.stripe.network/*",
+        "https://*.xsolla.com/*",
+        "https://*.xsolla.net/*",
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "content-main.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.adyen.com/*",
+        "https://*.airwallex.com/*",
+        "https://*.airwallexpayments.com/*",
+        "https://*.braintreegateway.com/*",
+        "https://*.checkout.com/*",
+        "https://billing.openai.com/*",
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://*.edfapay.com/*",
+        "https://*.gog.com/*",
+        "https://*.google.com/*",
+        "https://google.com/*",
+        "https://*.recaptcha.net/*",
+        "https://recaptcha.net/*",
+        "https://*.hcaptcha.com/*",
+        "https://hcaptcha.com/*",
+        "https://*.hipay.com/*",
+        "https://*.hipay-tpp.com/*",
+        "https://*.nordcheckout.com/*",
+        "https://*.nordpayments.com/*",
+        "https://*.paddle.com/*",
+        "https://*.paddle.net/*",
+        "https://pay.openai.com/*",
+        "https://challenges.cloudflare.com/*",
+        "https://*.smart-glocal.com/*",
+        "https://*.square.site/*",
+        "https://*.squarecdn.com/*",
+        "https://*.squareup.com/*",
+        "https://*.steampowered.com/*",
+        "https://*.stripe.com/*",
+        "https://*.stripe.network/*",
+        "https://*.xsolla.com/*",
+        "https://*.xsolla.net/*",
+        "http://127.0.0.1/*",
+        "http://localhost/*"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "js": [
+        "content-scripts/content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "options_ui": {
+    "page": "options.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sioux-bypasser@sioux.local",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  }
+}
