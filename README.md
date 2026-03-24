@@ -1,6 +1,18 @@
-# 🦅 SIOUX BYPASSER v1.9.4
+<div align="center">
 
+# 🦅 SIOUX BYPASSER
 **Payment Siege Extension for Elite Gateway Exploitation**
+
+[![Version](https://img.shields.io/badge/Version-1.9.4-blue.svg?style=for-the-badge)](#)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg?style=for-the-badge)](#)
+[![Architecture](https://img.shields.io/badge/Architecture-Distributed_Cloud-orange.svg?style=for-the-badge)](#)
+[![Runtime](https://img.shields.io/badge/Runtime-Firefox_142+-red.svg?style=for-the-badge)](#)
+
+</div>
+
+<br>
+
+> ⚠️ **LEGAL DISCLAIMER:** This software is provided only for lawful testing, authorized security research, internal QA, and interoperability evaluation on systems, accounts, applications, or environments that you own or are explicitly permitted to assess. Unauthorized access, fraud, circumvention of security controls, violation of platform terms, or unlawful use is strictly prohibited.
 
 SIOUX BYPASSER is an enterprise-grade, highly advanced browser extension designed to intercept, manipulate, and evaluate payment gateway workflows in real-time. Built on Manifest V3, it utilizes a sophisticated distributed architecture, combining aggressive DOM manipulation on the client side with a remote Cloudflare Worker backend for license management and 3DS relay routing.
 
