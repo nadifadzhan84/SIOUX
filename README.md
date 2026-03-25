@@ -138,6 +138,19 @@ The packaged file will be created in `dist/sioux-bypasser-v<version>.xpi`.
 
 ---
 
+## 📱 Android Support (Kiwi Browser)
+
+SIOUX BYPASSER can be used on Android devices via **Kiwi Browser**, a Chromium-based mobile browser that supports Chrome extensions.
+
+### Installation on Kiwi Browser (Android)
+
+1. Install **Kiwi Browser** from the [Google Play Store](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser).
+2. Download the Chromium package from this repo:
+   ```text
+   dist/sioux-bypasser-v1.9.4-chromium.zip
+
+---
+
 ## LICENSE KEY
 
 <details>
