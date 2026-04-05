@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIOUX Runtime Checkout Sandbox</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #08111b 0%, #0f2030 55%, #111827 100%);
+        color: #effaff;
+      }
+      main {
+        max-width: 720px;
+        margin: 48px auto;
+        padding: 32px;
+        border-radius: 24px;
+        border: 1px solid rgba(93, 227, 255, 0.18);
+        background: rgba(8, 18, 30, 0.88);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      }
+      h1 {
+        margin: 0 0 12px;
+      }
+      p {
+        color: #b4d8e5;
+      }
+      form {
+        display: grid;
+        gap: 14px;
+        margin-top: 28px;
+      }
+      input {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(93, 227, 255, 0.18);
+        background: rgba(10, 18, 28, 0.92);
+        color: #f6ffff;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      button {
+        padding: 14px 18px;
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #52f8bc 0%, #21d2ff 100%);
+        color: #041019;
+        font-weight: 800;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Checkout Runtime Sandbox</h1>
+      <p>This local page exposes strong payment DOM markers so the SIOUX checkout widget can be tested safely.</p>
+      <form action="/payment/confirm" method="post" data-payment-form>
+        <input type="text" autocomplete="cc-number" name="cardNumber" placeholder="Card number">
+        <div class="grid">
+          <input type="text" autocomplete="cc-exp" name="cardExpiry" placeholder="MM / YY">
+          <input type="text" autocomplete="cc-csc" name="cardCvc" placeholder="CVC">
+        </div>
+        <div data-payment-element data-testid="payment-element"></div>
+        <button type="submit">Pay now</button>
+      </form>
+    </main>
+  </body>
+</html>

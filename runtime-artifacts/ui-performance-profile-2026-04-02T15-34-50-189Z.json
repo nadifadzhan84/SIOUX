@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-04-02T15:34:50.157Z",
+  "browser": "Edge",
+  "browserPath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "extensionId": "fkeffgakfgokmfgcokigncpblpofknio",
+  "pages": {
+    "options": {
+      "default": {
+        "snapshot": {
+          "href": "chrome-extension://fkeffgakfgokmfgcokigncpblpofknio/options.html",
+          "title": "SIOUX BYPASSER V1.9.5 - Configuration",
+          "visibility": "visible",
+          "bodyAttributes": {
+            "reduceAnimations": "false",
+            "hardwareAcceleration": "true"
+          },
+          "dom": {
+            "elements": 523,
+            "logEntries": 11,
+            "settingsSections": 0
+          },
+          "timing": {
+            "domContentLoadedMs": 742.3999999985099,
+            "loadMs": 1256,
+            "durationMs": 1256
+          },
+          "firstContentfulPaintMs": 968
+        },
+        "workloadResult": {
+          "ok": true,
+          "entries": 11,
+          "scrollHeight": 584,
+          "clientHeight": 188,
+          "maxScroll": 396
+        },
+        "domCounters": {
+          "documents": 6,
+          "nodes": 4050,
+          "jsEventListeners": 180
+        },
+        "metrics": {
+          "before": {
+            "Nodes": 4050,
+            "Documents": 6,
+            "Frames": 6,
+            "JSEventListeners": 180,
+            "JSHeapUsedSize": 2308336,
+            "JSHeapTotalSize": 3670016,
+            "LayoutCount": 0,
+            "RecalcStyleCount": 28,
+            "LayoutDuration": 0,
+            "RecalcStyleDuration": 0.008,
+            "ScriptDuration": 0,
+            "TaskDuration": 0.226
+          },
+          "after": {
+            "Nodes": 5633,
+            "Documents": 6,
+            "Frames": 6,
+            "JSEventListeners": 180,
+            "JSHeapUsedSize": 2437056,
+            "JSHeapTotalSize": 3670016,
+            "LayoutCount": 7,
+            "RecalcStyleCount": 124,
+            "LayoutDuration": 0.011,
+            "RecalcStyleDuration": 0.056,
+            "ScriptDuration": 0.035,
+            "TaskDuration": 0.671
+          },
+          "delta": {
+            "Nodes": 1583,
+            "Documents": 0,
+            "Frames": 0,
+            "JSEventListeners": 0,
+            "JSHeapUsedSize": 128720,
+            "JSHeapTotalSize": 0,
+            "LayoutCount": 7,
+            "RecalcStyleCount": 96,
+            "LayoutDuration": 0.011,
+            "RecalcStyleDuration": 0.048,
+            "ScriptDuration": 0.035,
+            "TaskDuration": 0.445
+          }
+        },
+        "trace": null
+      },
+      "low_gpu": {
+        "snapshot": {
+          "href": "chrome-extension://fkeffgakfgokmfgcokigncpblpofknio/options.html",
+          "title": "SIOUX BYPASSER V1.9.5 - Configuration",
+          "visibility": "visible",
+          "bodyAttributes": {
+            "reduceAnimations": "true",
+            "hardwareAcceleration": "false"
+          },
+          "dom": {
+            "elements": 523,
+            "logEntries": 11,
+            "settingsSections": 0
+          },
+          "timing": {
+            "domContentLoadedMs": 454.30000000447035,
+            "loadMs": 522.3999999985099,
+            "durationMs": 522.3999999985099
+          },
+          "firstContentfulPaintMs": 1404
+        },
+        "workloadResult": {
+          "ok": true,
+          "entries": 11,
+          "scrollHeight": 584,
+          "clientHeight": 188,
+          "maxScroll": 396
+        },
+        "domCounters": {
+          "documents": 6,
+          "nodes": 4038,
+          "jsEventListeners": 180
+        },
+        "metrics": {
+          "before": {
+            "Nodes": 4038,
+            "Documents": 6,
+            "Frames": 6,
+            "JSEventListeners": 180,
+            "JSHeapUsedSize": 2644016,
+            "JSHeapTotalSize": 3670016,
+            "LayoutCount": 8,
+            "RecalcStyleCount": 92,
+            "LayoutDuration": 0.011,
+            "RecalcStyleDuration": 0.046,
+            "ScriptDuration": 0.045,
+            "TaskDuration": 0.517
+          },
+          "after": {
+            "Nodes": 5581,
+            "Documents": 6,
+            "Frames": 6,
+            "JSEventListeners": 180,
+            "JSHeapUsedSize": 2801220,
+            "JSHeapTotalSize": 4718592,
+            "LayoutCount": 15,
+            "RecalcStyleCount": 188,
+            "LayoutDuration": 0.017,
+            "RecalcStyleDuration": 0.076,
+            "ScriptDuration": 0.069,
+            "TaskDuration": 0.872
+          },
+          "delta": {
+            "Nodes": 1543,
+            "Documents": 0,
+            "Frames": 0,
+            "JSEventListeners": 0,
+            "JSHeapUsedSize": 157204,
+            "JSHeapTotalSize": 1048576,
+            "LayoutCount": 7,
+            "RecalcStyleCount": 96,
+            "LayoutDuration": 0.006,
+            "RecalcStyleDuration": 0.03,
+            "ScriptDuration": 0.024,
+            "TaskDuration": 0.355
+          }
+        },
+        "trace": null
+      }
+    },
+    "settings": {}
+  }
+}
