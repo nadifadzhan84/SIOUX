@@ -326,47 +326,59 @@ jobs:
           commit_url = os.environ.get("COMMIT_URL", "").strip()
           run_url = os.environ.get("RUN_URL", "").strip()
 
-          release_banner = "📢 <b>SIOUX SCRIPT UPDATE</b>"
+          release_banner = "� <b>LATEST UPDATE: SIOUX BYPASSER</b> 🚀"
           release_subtitle = (
-              f"<code>Member group notification • SIOUX v{html.escape(current_version)}</code>"
+              f"<code>Elite Gateway Exploitation Update • v{html.escape(current_version)}</code>"
               if current_version != "unknown"
-              else "<code>Member group notification • SIOUX repository update</code>"
+              else "<code>Elite Gateway Exploitation Update</code>"
           )
+
+          narrative = []
+          if current_version == "1.9.6":
+              narrative = [
+                  "Hello everyone! SIOUX Bypasser just got a massive update to version <b>1.9.6</b>, bringing major expansions for elite payment gateway exploitation flows.",
+                  "",
+                  "🌐 <b>1. NEW: Adobe Commerce & Canva Flow</b>",
+                  "• Added full support for bypassing elite gateways on <b>Adobe Commerce</b> (<code>commerce.adobe.com</code>, <code>tokui-commerce.adobe.com</code>).",
+                  "• Added bypass injection for the <b>Canva</b> design platform (<code>*.canva.com</code>).",
+                  "",
+                  "🛒 <b>2. Expanded Gateways & AI Services</b>",
+                  "Injected bypass support for the newest elite billing infrastructures:",
+                  "• <b>AI Platforms:</b> OpenAI / ChatGPT Billing (<code>billing.openai.com</code>), Vercel & Flyne AI.",
+                  "• <b>Gateways:</b> Stripe Network, Adyen, Braintree, Checkout.com, Paddle, Airwallex & Square.",
+                  "• <b>Gaming & Digital:</b> Xsolla, GOG, Steampowered & Pandora.",
+                  "• <b>Captcha APIs:</b> Seamless integration with hCaptcha, reCaptcha, 2Captcha, CapSolver, Nopecha & Anti-Captcha.",
+                  "",
+                  "🛠 <b>3. Bug Fixes & Optimization</b>",
+                  "• <b>Chrome Fix (MV3):</b> Fixed the <code>background.scripts</code> Manifest V3 error on Chrome. Runs 100% smoothly using <code>service_worker</code>.",
+                  "• Cleaner format distributions: <code>.zip</code> for Chrome/Edge and native <code>.xpi</code> for Firefox.",
+                  "",
+                  "📁 <b>How to Update:</b>",
+                  "1. Remove your old SIOUX extension from the browser.",
+                  "2. Download the newest files from the repo.",
+                  f"3. Install <code>sioux-bypasser-v{html.escape(current_version)}-chrome.zip</code> or <code>sioux-bypasser-v{html.escape(current_version)}-firefox.xpi</code>.",
+                  ""
+              ]
 
           text = "\n".join(
               [
                   release_banner,
                   release_subtitle,
                   "",
-                  " ".join(badges[:5]),
-                  "",
+                  *narrative,
                   "┏ <b>Build Info</b>",
                   f"┣ 📦 Repo: <code>{html.escape(os.environ.get('REPOSITORY', '-'))}</code>",
-                  f"┣ 🌿 Branch: <code>{html.escape(os.environ.get('BRANCH', '-'))}</code>",
                   f"┣ 🔖 Commit: <code>{html.escape(short_sha or '-')}</code>",
-                  f"┣ 🔄 Range: <code>{html.escape(before_sha or 'manual')} → {html.escape(short_sha or '-')}</code>",
                   f"┣ 👤 Author: <code>{html.escape(os.environ.get('ACTOR', '-'))}</code>",
-                  f"┗ ⚙️ Event: <code>{html.escape(event_name or '-')}</code>",
-                  "",
-                  "┏ <b>Pesan Penting</b>",
-                  *tree_lines(important_points, "Belum ada highlight user-facing yang terdeteksi otomatis pada push ini."),
-                  "",
-                  "┏ <b>Manifest Delta</b>",
-                  *tree_lines(manifest_points, "Perubahan manifest tidak terdeteksi atau file manifest tidak tersedia."),
-                  "",
-                  "┏ <b>Commit Headline</b>",
-                  f"┗ 📝 <b>{html.escape(headline)}</b>",
+                  f"┗ 📝 Message: <i>{html.escape(headline)}</i>",
                   "",
                   "┏ <b>Files Changed</b>",
-                  *tree_lines(file_lines, "Tidak ada daftar file yang bisa ditampilkan."),
+                  *tree_lines(file_lines, "No files changed."),
                   *( [f"📊 <i>{html.escape(shortstat)}</i>"] if shortstat else [f"📊 <i>{len(changed_files)} file(s) changed</i>"] ),
                   "",
                   "┏ <b>Quick Links</b>",
                   f"┣ 🔗 <a href=\"{html.escape(commit_url or '-')}\">Open Commit</a>",
-                  f"┣ 🧭 <a href=\"{html.escape(run_url or '-')}\">Open Workflow Run</a>",
-                  f"┗ 🪄 <a href=\"{html.escape(compare_url or commit_url or '-')}\">View Compare</a>",
-                  "",
-                  "✦ <b>Status</b>: <code>Delivered by GitHub Actions</code>",
+                  f"┗ 🧭 <a href=\"{html.escape(run_url or '-')}\">Open Workflow Run</a>"
               ]
           )
 
